@@ -54,10 +54,21 @@ http://localhost:8080/
 
 # 注意事项
 
-由于代码跑在docker里，所以 localhost 和 127.0.0.1不再可用。如需要连接 redis 和 mysql，应使用如下地址：
+1.由于代码跑在docker里，所以 localhost 和 127.0.0.1不再可用。如需要连接 redis 和 mysql，应使用如下地址：
 
 ```redis-server
 redis-server
 mysql-server
 ```
-
+2.Alpine
+```bash
+#Alpine Linux使用apk作为其包管理工具，同时提供了一些服务管理工具，例如OpenRC和runit。下面是一些常用的Alpine Linux命令：
+apk add packagename #安装指定软件包。例如，apk add nginx将安装Nginx Web服务器。
+apk upgrade #升级所有已安装的软件包。
+apk search keyword #搜索软件包，其中keyword是要搜索的关键字。例如，apk search mysql将搜索包含“mysql”关键字的软件包。
+apk info packagename #显示软件包的信息。例如，apk info nginx将显示Nginx软件包的详细信息。
+apk del packagename #卸载指定软件包。例如，apk del nginx将卸载Nginx软件包。
+rc-service servicename start/stop/restart #启动、停止或重新启动指定服务。例如，rc-service nginx restart将重新启动Nginx Web服务器。
+rc-update add servicename #将指定服务添加到系统启动时启动。例如，rc-update add nginx将添加Nginx Web服务器到系统启动时启动。
+runitctl start/stop/restart servicename #启动、停止或重新启动指定服务。例如，runitctl restart nginx将重新启动Nginx Web服务器。
+```
