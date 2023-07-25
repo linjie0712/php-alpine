@@ -62,6 +62,7 @@ mysql-server
 ```
 2.403
 这个是权限问题，建议volumes的本机目录设置在家目录
+
 3.Alpine
 ```bash
 #Alpine Linux使用apk作为其包管理工具，同时提供了一些服务管理工具，例如OpenRC和runit。下面是一些常用的Alpine Linux命令：
